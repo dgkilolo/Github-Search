@@ -22,7 +22,7 @@ export class LandingPageComponent implements OnInit {
     // this.searchService.searchRequest()
     this.UserName = this.searchService.UserName
 
-    this.searchService.searchRepo()
+    //  this.searchService.searchRepo()
     this.searchService.ListRepos = this.Repozz
 
   }

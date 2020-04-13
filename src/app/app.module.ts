@@ -8,6 +8,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RoutingModule } from './routing/routing.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RoutingModule,
     FormsModule,
     HttpClientModule,
   ],

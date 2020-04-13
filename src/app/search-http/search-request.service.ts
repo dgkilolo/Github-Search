@@ -22,6 +22,7 @@ export class SearchRequestService {
   constructor(private http:HttpClient) {
     this.UserName = new UserName('', '', '');  
     
+    
     this.Repos = new Repository('');
    }
 
@@ -42,13 +43,13 @@ export class SearchRequestService {
      return promise 
    }
    
-   searchRepo() {
+   searchRepo(name) {
     interface ApiResponse {
     name:string;
     }
 
     let promise = new Promise ((resolve, reject)=> {
-      this.http.get<ApiResponse>(environment.apiUrl .concat('dgkilolo/repos') ).toPromise().then (response => {
+      this.http.get<ApiResponse>(environment.apiUrl + name + '/repos' ).toPromise().then (response => {
 
         for(let i = 0; i<15;i++){
 

@@ -16,6 +16,8 @@ export class SearchFormComponent implements OnInit {
   searching() {  
    this.searchService.searchRequest(this.userName)
    console.log(this.userName)
+
+   this.searchService.searchRepo(this.userName)
   }
 
   constructor(private searchService: SearchRequestService) { }
