@@ -1,1 +1,11 @@
-<p>search-form works!</p>
+<div class="container-fluid">
+  <h1>Search Username</h1>
+  <hr>
+  <form class="card" >
+    <div class="form-group">
+      <label for="userName"> <strong>Username:</strong> </label>
+      <input type="text" placeholder="Enter Username" class="form-control" name="userName" id="userName"  [(ngModel)] = "userName" >
+      <button class="btn btn-outline-success" (click)="searching()"  >Search</button>
+    </div>
+  </form>
+</div>

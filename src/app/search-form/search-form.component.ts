@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { SearchRequestService } from '../search-http/search-request.service';
 
 @Component({
   selector: 'app-search-form',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFormComponent implements OnInit {
 
-  constructor() { }
+  
+  
+
+  userName: string;
+  
+  searching() {  
+   this.searchService.searchRequest(this.userName)
+   console.log(this.userName)
+  }
+
+  constructor(private searchService: SearchRequestService) { }
 
   ngOnInit(): void {
   }
-
+  
 }
