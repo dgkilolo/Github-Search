@@ -17,13 +17,14 @@ export class SearchRequestService {
   NumberRepo: UserName;
   LoginName: UserName;
   Avatar: UserName;
+  ProfilePic: UserName;
   ListRepos: Repository[] = [] ;
  
   Repos: Repository;
  
 
   constructor(private http:HttpClient) {
-    this.UserName = new UserName('', '', '', '', '');    
+    this.UserName = new UserName('', '', '', '', '', '');    
     
     
     this.Repos = new Repository('');
@@ -52,13 +53,15 @@ export class SearchRequestService {
      interface ApiResponse {
       login:string;
       public_repos:string;
+      avatar_url:string;
      }
 
      let promise = new Promise ((resolve, reject)=> {
        this.http.get<ApiResponse>(environment.apiUrl + name  ).toPromise().then (response => {
          this.UserName.UserName = response.login
         this.UserName.NumberRepo = response.public_repos
-        console.log(response.public_repos)
+        this.UserName.ProfilePic = response.avatar_url
+        // console.log(response.avatar_url)
          resolve()
        })
      })
