@@ -55,7 +55,7 @@ export class SearchRequestService {
      }
 
      let promise = new Promise ((resolve, reject)=> {
-       this.http.get<ApiResponse>(environment.apiUrl + name ).toPromise().then (response => {
+       this.http.get<ApiResponse>(environment.apiUrl + name  ).toPromise().then (response => {
          this.UserName.UserName = response.login
         this.UserName.NumberRepo = response.public_repos
         console.log(response.public_repos)
