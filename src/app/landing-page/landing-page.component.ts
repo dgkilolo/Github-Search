@@ -13,11 +13,14 @@ import { UserName } from '../user-name';
 export class LandingPageComponent implements OnInit {
 
   UserName: UserName;
+  LoginName: UserName;
   Repozz = [];
 
   constructor(private searchService: SearchRequestService) { }
 
   ngOnInit(): void {
+    this.searchService.displayRequest()
+    this.LoginName = this.searchService.LoginName
 
     // this.searchService.searchRequest()
     this.UserName = this.searchService.UserName
