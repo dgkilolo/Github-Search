@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './routing/routing.module';
 import { SearchDirective } from './search.directive';
+import { DatePipe } from './date.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SearchDirective } from './search.directive';
     AppComponent,
     LandingPageComponent,
     SearchFormComponent,
-    SearchDirective
+    SearchDirective,
+    DatePipe
   ],
   imports: [
     BrowserModule,
