@@ -1,7 +1,4 @@
-.col-md-3 {
-  padding-top: 75px;
-  text-align: center;
-  color: red;
-  border: solid red 2px ;
-  height: 200px;
+img {
+  width: auto;
+  height: 180px;
 }

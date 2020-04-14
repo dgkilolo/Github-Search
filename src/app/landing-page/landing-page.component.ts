@@ -14,6 +14,7 @@ export class LandingPageComponent implements OnInit {
 
   UserName: UserName;
   LoginName: UserName;
+  Avatar:UserName;
   Repozz = [];
 
   constructor(private searchService: SearchRequestService) { }
@@ -21,6 +22,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
     this.searchService.displayRequest()
     this.LoginName = this.searchService.LoginName
+    this.Avatar = this.searchService.Avatar
 
     // this.searchService.searchRequest()
     this.UserName = this.searchService.UserName

@@ -6,8 +6,7 @@ import { UserName } from '../user-name';
 import { Repository } from '../repository';
 
 import { SearchFormComponent } from '../search-form/search-form.component';
-import { resolve } from 'dns';
-import { rejects } from 'assert';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +16,14 @@ export class SearchRequestService {
   UserName: UserName;
   NumberRepo: UserName;
   LoginName: UserName;
+  Avatar: UserName;
   ListRepos: Repository[] = [] ;
  
   Repos: Repository;
  
 
   constructor(private http:HttpClient) {
-    this.UserName = new UserName('', '', '', '');    
+    this.UserName = new UserName('', '', '', '', '');    
     
     
     this.Repos = new Repository('');
@@ -32,12 +32,13 @@ export class SearchRequestService {
    displayRequest() {
     interface ApiResponse {
      login:string;
-     
+      avatar_url:string;
     }
 
     let promise = new Promise ((resolve, reject)=> {
       this.http.get<ApiResponse>(environment.apiUrl + 'dgkilolo' ).toPromise().then (response => {
         this.UserName.LoginName = response.login
+        this.UserName.Avatar = response.avatar_url
         // this.UserName.NumberRepo = response.public_repos
         // console.log(response.public_repos)
         resolve()
