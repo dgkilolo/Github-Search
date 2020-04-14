@@ -20,7 +20,7 @@ export class SearchRequestService {
  
 
   constructor(private http:HttpClient) {
-    this.UserName = new UserName('', '', '');  
+    this.UserName = new UserName('', '', '');    
     
     
     this.Repos = new Repository('');
@@ -47,6 +47,8 @@ export class SearchRequestService {
     interface ApiResponse {
     name:string;
     }
+
+    this.ListRepos.length = 0;    
 
     let promise = new Promise ((resolve, reject)=> {
       this.http.get<ApiResponse>(environment.apiUrl + name + '/repos' ).toPromise().then (response => {
