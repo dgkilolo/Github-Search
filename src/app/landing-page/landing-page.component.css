@@ -4,13 +4,17 @@
 }
 blockquote {
   background-color: tomato;
+  font-family: 'Gotu', sans-serif;
 }
 #myProfile {
-  background-color: teal;
+  background-color: turquoise;
 }
 .githubName {
-  font-family: 'Comic Neue', cursive;;
+  font-family: 'Comic Neue', cursive;
 }
 h1 {
-  font-family: 'Gotu', sans-serif;;
+  font-family: 'Gotu', sans-serif;
+}
+.list {
+  font-family: 'Open Sans Condensed', sans-serif;
 }

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { SearchRequestService } from '../search-http/search-request.service';
 import { UserName } from '../user-name';
-
-
 
 @Component({
   selector: 'app-landing-page',
@@ -22,14 +19,8 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {
     this.searchService.displayRequest()
     this.LoginName = this.searchService.LoginName
-    this.Avatar = this.searchService.Avatar
-
-    // this.searchService.searchRequest()
+    this.Avatar = this.searchService.Avatar    
     this.UserName = this.searchService.UserName
-
-    //  this.searchService.searchRepo()
     this.searchService.ListRepos = this.Repozz
-
   }
-
 }
